@@ -32,7 +32,7 @@ int main()
     list.displayList();
     double gpa;
     cout << "Enter a gpa: ";
-    cint >> gpa;
+    cin >> gpa;
     list.displayList(gpa);
     double from, to;
     cout << "Enter a gpa range: ";

@@ -52,22 +52,53 @@ void StudentList::displayList() const
 
 
 // **************************************************
-// the first overloaded displayList: ...
-// 
-//                               
+// the first overloaded displayList: displays 
+// all students with the gpa below or equal to 
+// the input value.           
 // **************************************************
 /* Write your code here, including comment above */
+void StudentList::displayList(double gpa) const {
+    ListNode *pCur;
+    pCur = head->next;
+
+    cout<< endl;
+    while(pCur) {
+        if (pCur->stu.gpa <= gpa) {
+            cout << pCur->stu.gpa <<" " << pCur->stu.name << endl;
+        }
+        pCur = pCur->next;
+    }
+    cout << endl;
+}
 
 
 
 // **************************************************
-// the second overloaded displayList: ...
-// 
-//                               
+// the second overloaded displayList: displays 
+// all students with the gpa within the range
+// of the two input values, inclusive. 
 // **************************************************
 /* Write your code here, including comment above */
+void StudentList::displayList(double from, double to) const {
+    ListNode *pCur;
+    pCur = head->next;
+    double temp;
 
+    if (from > to) {
+        temp = to;
+        to = from;
+        from = temp;
+    }
 
+    cout << endl;
+    while (pCur) {
+        if (pCur->stu.gpa >= from && pCur->stu.gpa <= to) {
+            cout << pCur->stu.gpa << " " << pCur->stu.name << endl;
+        }
+        pCur = pCur->next;
+    }
+    cout << endl;
+}
 
 // **************************************************
 // The insertNode function inserts a node with
